@@ -1,0 +1,9 @@
+1. What is the URL of your hello_world ruleset?
+https://raw.githubusercontent.com/AngellNick/Labs/master/Lab0/hello_world.krl
+
+2. What happened when you parsed the improperly formatted ruleset? What error did you see?
+The parser gave an error: "No possible parsings: 23:3" and "status: error at 23:3"
+Registering an invalid ruleset is not allowed.
+
+3. What port was your pico engine running on? 
+8080.

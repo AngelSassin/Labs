@@ -1,0 +1,19 @@
+Send an event to the pico using the new channel and the original (default) channel. 
+ - Do you get the same result on both? Why or why not? 
+
+Yes. They are both channels whose identifiers I know, so I'm able to raise events to them. As long as the channel is open, I can send events and get the same results.
+
+
+
+Delete the channel.
+Resend the event using the deleted channel. 
+ - What happens? Why?
+
+I get an error, because the channel no longer exists. The event won't go through because the channel I'm sending it to isn't there.
+{"error":"ECI not found: <channel>"}
+
+
+
+- Send the misspelled event ecco/hello to your pico. What do you observe? Why? 
+The directives I receive are not the ones which echo/hello sends back. There is no rule that fires on ecco/hello, so no directives are given and nothing happens. 
+{"directives":[]}
