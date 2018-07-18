@@ -1,3 +1,6 @@
+URL: https://raw.githubusercontent.com/AngellNick/Labs/master/Lab1/hello_monkey.krl
+
+
 Send an event to the pico using the new channel and the original (default) channel. 
  - Do you get the same result on both? Why or why not? 
 
