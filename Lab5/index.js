@@ -7,7 +7,7 @@ angular.module('temperature', [])
     $scope.temperatures = [];
     $scope.violations = [];
 
-    $scope.eci = "g8kHejYxeQWcmPyfhq7ma";
+    $scope.eci = "ECI GOES HERE";
 
     var bURL = 'http://localhost:8080/sky/event/'+$scope.eci+'/eid/sensor/profile_updated';
     $scope.updateProfile = function() {
