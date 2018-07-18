@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <title>Temperature</title>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="angular.js"></script>
+  <script src="index.js"></script>
+  <style type="text/css">
+    span.finished { cursor: pointer; color: blue; text-decoration: underline; }
+    div.eci input { visibility: hidden; }
+    div.eci:hover input { visibility: visible; }
+  </style>
+</head>
+<body ng-app="temperature" ng-controller="MainCtrl">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<div class="page-header"> 
+  <h2>Current Temperature: 
+  <div ng-repeat="temperature in current | orderBy: '-ordinal'">
+    {{temperature.temp}} °F
+  </div>
+  </h2>
+  </div>
+  <div ng-repeat="prof in profile | orderBy: '-ordinal'">
+    <h3>Current Profile:</h3>
+    <b>Profile Name:</b> {{prof.name}} </br>
+    <b>Profile Location: </b> {{prof.location}} </br>
+    <b>Temp Threshold: </b> {{prof.threshold}} </br>
+    <b>Number to Notify: </b> {{prof.number}} </br>
+  </div>
+  
+  <form ng-submit="updateProfile()" style = "margin-top:30px;">
+    <input type="text" ng-model="name" placeholder="Profile Name"></input> </br>
+    <input type="text" ng-model="location" placeholder="Location"></input> </br>
+    <input type="text" ng-model="threshold" placeholder="Temperature Threshold"></input> </br>
+    <input type="text" ng-model="number" placeholder="Number to Notify"></input> </br>
+    <button type="submit">Update Profile</button>
+  </form>
+</div>
+</div>
+
+</br>
+</br>
+
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+  <h3>Recent Temperatures: </h3>
+  <div ng-repeat="temperature in temperatures | orderBy: '-ordinal'">
+    {{temperature.time}} &middot; &middot; &middot; &middot;
+    {{temperature.temp}} °F
+  </div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+  <h3>Recent Threshold Violations: </h3>
+  <div ng-repeat="temperature in violations | orderBy: '-ordinal'">
+    {{temperature.time}} &middot; &middot; &middot; &middot;
+    {{temperature.temp}} °F
+  </div>
+</div>
+</div>
+</body>
+</html>
